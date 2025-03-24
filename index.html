@@ -3,18 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Personal Website</title>
+    <title>Pin-Ting Liao | Homepage</title>
     <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
   </head>
+  <link rel="icon" href="smu-favicon.png" type="image/png" />
   <body>
     <header>
       <div class="container">
-        <h1>Your Name</h1>
-        <p>Web Developer | Designer | Creator</p>
+        <h1>Pin-Ting Liao</h1>
+        <p>Collaborative Leadership | Problem-Solving | Quick Learner</p>
       </div>
     </header>
 
@@ -35,19 +40,27 @@
         <div class="about-content">
           <div class="about-text">
             <p>
-              Hello! I'm a passionate web developer with a keen interest in
-              creating beautiful, functional websites. I believe in clean code
-              and user-friendly designs.
+              Hello! I am a second-year master's student researching Artificial
+              Intelligence at Singapore Management University (SMU). Before SMU,
+              I received my bachelor's degree in Data Science and Management
+              from National Tsing Hua University (NTHU) in 2024. I will be
+              fortunate to visit University College London (UCL) as a visiting
+              student in the coming summer of 2025.
             </p>
             <p>
-              Feel free to explore my website to learn more about my work and
-              skills. If you're interested in collaborating on a project, don't
-              hesitate to get in touch!
+              I am a programmer who enjoys solving problems with technology. My
+              interests focus on Machine Learning and Data Science. One of the
+              project I'm working on recently is optimizing scheduling systems
+              with Adaptive Large Neighborhood Search (ALNS). Feel free to
+              connect with me via email or LinkedIn!
             </p>
           </div>
           <div class="about-image">
-            <!-- Replace with your image path -->
-            <img src="https://via.placeholder.com/300" alt="Profile Picture" />
+            <img
+              src="profile.JPG"
+              alt="Profile Picture"
+              class="profile-image"
+            />
           </div>
         </div>
       </div>
@@ -59,10 +72,7 @@
         <div class="projects-grid">
           <div class="project-card">
             <h3>Project One</h3>
-            <p>
-              A brief description of your first project. What technologies did
-              you use? What problems did it solve?
-            </p>
+            <p>To be edit</p>
             <div class="project-links">
               <a href="#" class="btn">View Project</a>
               <a href="#" class="btn btn-outline">GitHub</a>
@@ -70,10 +80,7 @@
           </div>
           <div class="project-card">
             <h3>Project Two</h3>
-            <p>
-              A brief description of your second project. Highlight the unique
-              aspects and your contribution.
-            </p>
+            <p>To be edit</p>
             <div class="project-links">
               <a href="#" class="btn">View Project</a>
               <a href="#" class="btn btn-outline">GitHub</a>
@@ -81,10 +88,7 @@
           </div>
           <div class="project-card">
             <h3>Project Three</h3>
-            <p>
-              A brief description of your third project. What was challenging
-              about it? What did you learn?
-            </p>
+            <p>To be edit</p>
             <div class="project-links">
               <a href="#" class="btn">View Project</a>
               <a href="#" class="btn btn-outline">GitHub</a>
@@ -104,15 +108,29 @@
               <li><i class="fab fa-html5"></i> HTML5</li>
               <li><i class="fab fa-css3-alt"></i> CSS3</li>
               <li><i class="fab fa-js"></i> JavaScript</li>
-              <li><i class="fab fa-react"></i> React</li>
+              <!-- <li><i class="fab fa-react"></i> React</li> -->
             </ul>
           </div>
           <div class="skill-category">
             <h3>Backend</h3>
             <ul class="skills-list">
-              <li><i class="fab fa-node-js"></i> Node.js</li>
-              <li><i class="fas fa-database"></i> MongoDB</li>
-              <li><i class="fab fa-python"></i> Python</li>
+              <li>
+                <button class="toggle-button skill-item">
+                  <i class="fab fa-python"></i> Python (click to show libraries)
+                </button>
+                <ul class="toggle-list sub-skills" style="display: none">
+                  <li>TensorFlow</li>
+                  <li>PyTorch</li>
+                  <li>FastAPI</li>
+                  <li>Pytest</li>
+                  <li>OpenCV</li>
+                  <li>Scikit-learn</li>
+                  <li>Pandas</li>
+                </ul>
+              </li>
+              <li><i class="fas fa-database"></i> SQL</li>
+              <li><i class="fab fa-r-project"></i> R</li>
+              <li><i class="fab fa-aws"></i> AWS (Cognito)</li>
             </ul>
           </div>
           <div class="skill-category">
@@ -132,20 +150,26 @@
         <h2>Get In Touch</h2>
         <div class="contact-content">
           <div class="contact-info">
-            <p><i class="fas fa-envelope"></i> Email: your.email@example.com</p>
+            <p>
+              <i class="fas fa-envelope"></i> Email:
+              <a href="mailto:pinting2025@gmail.com">pinting2025@gmail.com</a>
+            </p>
             <p>
               <i class="fab fa-linkedin"></i> LinkedIn:
-              <a href="#">your-linkedin</a>
+              <a
+                href="https://www.linkedin.com/in/pin-ting-liao"
+                target="_blank"
+                >www.linkedin.com/in/pin-ting-liao</a
+              >
             </p>
             <p>
-              <i class="fab fa-github"></i> GitHub: <a href="#">your-github</a>
-            </p>
-            <p>
-              <i class="fab fa-twitter"></i> Twitter:
-              <a href="#">@your-twitter</a>
+              <i class="fab fa-github"></i> GitHub:
+              <a href="https://github.com/pinting2025" target="_blank"
+                >github.com/pinting2025</a
+              >
             </p>
           </div>
-          <form class="contact-form">
+          <form class="contact-form" id="contactForm">
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" required />
@@ -169,15 +193,18 @@
       </div>
     </section>
 
+    <!-- Thank you modal -->
+    <div id="thankYouModal" class="modal" style="display: none">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Thank You!</h2>
+        <p>Thank you for your email. I'll reply as soon as possible!</p>
+      </div>
+    </div>
+
     <footer>
       <div class="container">
-        <p>&copy; 2025 Your Name. All rights reserved.</p>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
+        <p>&copy; 2025 Pin-Ting Liao. All rights reserved.</p>
       </div>
     </footer>
 

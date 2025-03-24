@@ -138,6 +138,13 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
+        .profile-image {
+            width: 300px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
         /* Projects Section */
         .projects-grid {
             display: grid;
@@ -309,4 +316,75 @@
             .project-links {
                 flex-direction: column;
             }
+        }
+
+        .skill-item {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            font: inherit;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .skill-item i {
+            margin-right: 10px;
+            color: #2c73d2;
+        }
+        
+        .skill-item:hover {
+            color: #2c73d2;
+        }
+        
+        .sub-skills {
+            margin-top: 5px;
+            margin-left: 25px;
+            list-style-type: disc;
+        }
+        
+        .sub-skills li {
+            padding: 5px 0;
+            color: #555;
+        }
+        
+        .toggle-list {
+            transition: all 0.3s ease;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 5px;
+            width: 70%;
+            max-width: 500px;
+            position: relative;
+            text-align: center;
+        }
+        
+        .close-button {
+            position: absolute;
+            right: 10px;
+            top: 5px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .close-button:hover {
+            color: #2c73d2;
         }
