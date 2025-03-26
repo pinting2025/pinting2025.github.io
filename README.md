@@ -1,2 +1,2 @@
 # pinting2025.github.io
-personal website
+personal website 
