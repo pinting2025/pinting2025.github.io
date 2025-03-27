@@ -3,18 +3,50 @@
     emailjs.init("SS8I9OjUI11aFq2pU"); // EmailJS public key
 })();
 
+// Scroll Animation Observer
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            
+            // If the credentials section is in view, add the class to its content
+            if (entry.target.id === 'credentials') {
+                credentialsContent.classList.add('in-view');
+            }
+        }
+    });
+}, observerOptions);
+
+// Elements to observe
+const sections = document.querySelectorAll('.section');
+const projectCards = document.querySelectorAll('.project-card');
+const skillCategories = document.querySelectorAll('.skill-category');
+const fadeElements = document.querySelectorAll('.fade-in');
+const credentialsContent = document.querySelector('.credentials-content');
+
+// Observe elements
+sections.forEach(section => observer.observe(section));
+projectCards.forEach(card => observer.observe(card));
+skillCategories.forEach(category => observer.observe(category));
+fadeElements.forEach(element => observer.observe(element));
+
 // Smooth scrolling for navigation links
-document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        window.scrollTo({
-            top: targetElement.offsetTop - 70,
-            behavior: 'smooth'
-        });
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
     });
 });
 
